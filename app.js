@@ -192,9 +192,5 @@ function getData(auth) {
     })
 }
 
-app.locals({
-    app: {name: "Test"}
-});
-
 
 module.exports = app;
