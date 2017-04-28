@@ -192,5 +192,9 @@ function getData(auth) {
     })
 }
 
+app.locals({
+    app: {}
+});
+
 
 module.exports = app;
