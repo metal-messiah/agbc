@@ -104,7 +104,7 @@ function storeToken(token) {
  * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  */
 function getData(auth) {
-    console.log("GETTING ABOUT DATA")
+    console.log("GETTING ABOUT DATA");
     var sheets = google.sheets('v4');
     sheets.spreadsheets.values.get({
         auth: auth,
@@ -132,7 +132,7 @@ function getData(auth) {
                 }
             }
 
-            module.exports = about
+            module.exports = {
 
 
         }
