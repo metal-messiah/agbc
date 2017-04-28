@@ -1,0 +1,32 @@
+extends content_layout
+
+
+block content
+    div(class='container')
+        div(class="row")
+            div(class='col')
+                div(class='sort' id='date' onclick="sortByDate('oldest')") OLD to NEW
+            div(class='col')
+                div(class='sort' id='date' onclick="sortByDate('newest')") NEW to OLD
+            div(class='col')
+                div(class='sort' id='rating' onclick='sortByRank()') HIGHEST RATED
+        div(class='row' id='cards')
+
+            -
+                var list = data
+            each item in list
+
+                div(class="col")
+                    a(class='nostyle' href=item.grURL target='_blank')
+                        div(class='card' id=item.id data-rank=item.average data-default=item.id)
+                            div(class="thumbnail" style='background-image: url(' + item.thumbnail + ');')
+                            div(class="rank")
+                                =item.average
+                            div(class="card-block")
+                                if item.book.length > 20
+                                    h4(class="card-title")= item.book.substring(0, 20) + "..."
+                                else
+                                    h4(class="card-title")= item.book
+                                p(class="card-text")= item.author
+                                p(class="card-text")
+                                    small(class="text-muted")= item.date

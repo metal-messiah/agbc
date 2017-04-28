@@ -1,0 +1,32 @@
+extends content_layout
+
+
+
+
+block content
+    div(class="memberWrapper")
+        div(class="container")
+            div(class="row")
+                div(class="col-sm-12 col-sm-offset-0 col-lg-4 col-lg-offset-0" style="height:500px")
+                    div(id="memberHeadshot" style='background-image: url(' + data.headshot + ');')
+                div(class="col-sm-12 col-sm-offset-0 col-lg-8 col-lg-offset-0" style="height:500px")
+                    div(class="memberInfo")
+                        div(id="memberName")= data.name
+                        ul
+                            li(id="memberJoin") I've been a member since&nbsp;
+                                = data.join
+                            li(id="memberAverage") My average rating is&nbsp;
+                                = Number(data.average).toFixed(2)
+                            li(id="memberBadges")
+                                | Because i've reviewed&nbsp;
+                                = data.reviewsCount
+                                | &nbsp;books, I have earned the rank <b>
+                                = data.badges
+                                | </b>
+                            li(id="memberFavorite") My favorite book is&nbsp;
+                                = data.favorite
+                        div(id="memberDescription")
+                            = data.description
+                        if data.goodreads
+                            a(id="memberGoodreads" class="btn btn-primary" role="button" href=data.goodreads target="_blank")
+                                | GOODREADS

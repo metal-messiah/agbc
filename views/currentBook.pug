@@ -1,0 +1,21 @@
+extends content_layout
+
+block content
+    div(class='container')
+
+        div(class='row' id='currentBookRow')
+
+            div(class="col")
+
+                div(class='bigCard')
+                    div(class="bigThumbnail" style='background-image: url(' + data.thumbnail + ');')
+
+                    div(class="big-card-block")
+
+                        h4(class="card-title")= data.book
+                        p(class="card-text author")= data.author
+                        p(class="card-text")= data.grDesc
+                        p(class="card-text")
+                            small(class="text-muted") Scheduled for Review on&nbsp;
+                                =data.date
+                        a(class="btn btn-primary" href=data.grURL target='_blank' role="button") GOODREADS

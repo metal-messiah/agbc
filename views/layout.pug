@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+    body
+
+        div(class='background')
+            div(class='shelf')
+                div(class='nextMeeting')
+                    block content
+            div(class='menu')
+                table
+                    tr
+                        td
+                            div(class='about menuItem')
+                                a(href='/about' class='nostyle menuLink')
+                                    | ABOUT
+                        td
+                            div(class='members menuItem')
+                                a(href='/members' class='nostyle menuLink')
+                                    | MEMBERS
+                        td
+                            a(href='/')
+                                div(class='logo menuItem')
+                        td
+                            div(class='books menuItem')
+                                a(href='/books' class='nostyle menuLink')
+                                    | BOOKS
+                        td
+                            div(class='contact menuItem')
+                                a(href='/contact' class='nostyle menuLink' )
+                                    | CONTACT
+
+            div(class='booksMenu')
+                table
+                    tr
+                        td
+                            div(class='menuItem current')
+                                a(href='/current' class='nostyle')
+                                    | CURRENT BOOK
+
+
