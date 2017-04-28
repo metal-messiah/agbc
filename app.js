@@ -193,7 +193,7 @@ function getData(auth) {
 }
 
 app.locals({
-    app: {}
+    app: {name: "Test"}
 });
 
 
