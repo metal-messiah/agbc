@@ -5,12 +5,10 @@ var router = express.Router();
 
 exports.getAbout = function (req, res) {
     console.log(req.app.locals.about);
-    res.send(200);
+    res.render('about', {title: 'AGBC', data: req.app.locals.about});
 };
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('about', {title: 'AGBC', data: req.app.locals.about});
-});
+router.get('/', exports.getAbout);
 
 module.exports = router;

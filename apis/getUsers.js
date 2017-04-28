@@ -139,7 +139,7 @@ function getData(auth) {
                         reviewsCount: row[9],
                         id: i
                     };
-                    console.log(obj);
+                    //console.log(obj);
 
                     userData.push(obj);
 

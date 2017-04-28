@@ -167,7 +167,7 @@ function getData(auth) {
                             grBook = {id: null, image_url: '/images/no_cover.jpg', url: '#'};
                             inputID = null
                         }
-                        console.log(json)
+                        //console.log(json)
                         //console.log(json)
                         if (inputID) {
 

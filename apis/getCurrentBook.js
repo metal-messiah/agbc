@@ -159,7 +159,7 @@ function getData(auth) {
                             grBook = {id: null, image_url: '/images/no_cover.jpg', url: '#'};
 
                         }
-                        console.log("GOODREADS CURRENT BOOK DATA")
+                        //console.log("GOODREADS CURRENT BOOK DATA")
                         //console.log(json)
 
                         currentBook.grID = grBook.id
