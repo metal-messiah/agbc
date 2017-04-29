@@ -72,14 +72,21 @@ router.get('/', function (req, res, next) {
             scope: SCOPES
         });
         console.log('Authorize this app by visiting this url: ', authUrl);
-        oauth2Client.getToken("4/wg2TQTxu1k2sf4j7SKHKeYtjMf-buRMOZzak_Kfn81c", function (err, token) {
-            if (err) {
-                console.log('Error while trying to retrieve access token', err);
-                return;
-            }
-            oauth2Client.credentials = token;
-            storeToken(token);
-            callback(oauth2Client);
+        var rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+        rl.question('Enter the code from that page here: ', function (code) {
+            rl.close();
+            oauth2Client.getToken("4/wg2TQTxu1k2sf4j7SKHKeYtjMf-buRMOZzak_Kfn81c", function (err, token) {
+                if (err) {
+                    console.log('Error while trying to retrieve access token', err);
+                    return;
+                }
+                oauth2Client.credentials = token;
+                storeToken(token);
+                callback(oauth2Client);
+            });
         });
     }
 
