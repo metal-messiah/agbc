@@ -85,7 +85,7 @@ router.get('/', function (req, res, next) {
         });
         rl.question('Enter the code from that page here: ', function (code) {
             rl.close();
-            oauth2Client.getToken("4/wg2TQTxu1k2sf4j7SKHKeYtjMf-buRMOZzak_Kfn81c", function (err, token) {
+            oauth2Client.getToken(code, function (err, token) {
                 if (err) {
                     console.log('Error while trying to retrieve access token', err);
                     return;
