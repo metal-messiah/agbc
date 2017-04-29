@@ -5,12 +5,7 @@ var router = express.Router();
 router.get('/', function (req, res) {
 
     var GoogleSpreadsheet = require('google-spreadsheet');
-    var async = require('async');
-
-// spreadsheet key is the long id in the sheets URL
     var doc = new GoogleSpreadsheet('1d8rZFUSAOY34W6bgKlQAp4oswU-D3u1Z8gsdOcmMzLY');
-
-
     doc.getInfo(function (err, info) {
         console.log('Loaded doc: ' + info.title + ' by ' + info.author.email);
 
