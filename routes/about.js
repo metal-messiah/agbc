@@ -111,7 +111,7 @@ router.get('/', function (req, res) {
         console.log("GETTING ABOUT DATA")
         var sheets = google.sheets('v4');
         sheets.spreadsheets.values.get({
-            auth: auth,
+            auth: null,
             spreadsheetId: '1d8rZFUSAOY34W6bgKlQAp4oswU-D3u1Z8gsdOcmMzLY',
             range: 'About!A2:A2',
         }, function (err, response) {
