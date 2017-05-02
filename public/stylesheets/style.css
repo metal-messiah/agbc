@@ -266,6 +266,10 @@ booksTable td {
 
 .author {
     font-weight: bold;
+    margin: 0 auto;
+    /* justify-content: flex-start; */
+    width: 100%;
+    text-align: center;
 }
 
 .card {
